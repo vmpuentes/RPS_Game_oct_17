@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using RPS.Tests.ModelTests;
 using System;
 
 namespace RockPaperScissor.Tests
@@ -8,22 +9,30 @@ namespace RockPaperScissor.Tests
   public class RockPaperScissorTest : IDisposable
   {
       [TestMethod]
-      public void IsRockWinner_RockVsScissor_True()
+      public void WhosTheWinner_FistPlayerRockSecondPlayerScissor_FirstPlayerWins()
       {
-        RockPaperScissor TestRockPaperScissor = new RockPaperScissor();
-        Assert.AreEqual(false, testLeapYear.)
+        RPSGame testRPSGame = new RPSGame ("Paper", "Rock");
+        List<string> expected = new List<string> {"FistPlayer Wins"};
+        List<string> actual = testRPSGame.GameWinner();
+        CollectionAssert.AreEqual(expected, actual);
       }
+
       [TestMethod]
-      public void WhosTheWinner_PaperVsRock_True()
-      {
-        RockPaperScissor TestRockPaperScissor = new RockPaperScissor();
-        Assert.AreEqual(true, TestRockPaperScissor.WhosTheWinner());
-      }
-      [TestMethod]
-      public void WhosTheWinner_ScissorVsPaper_True()
-      {
-        RockPaperScissor TestRockPaperScissor = new RockPaperScissor();
-        Assert.AreEqual(true, TestRockPaperScissor.WhosTheWinner());
+      public void W
+      //   RockPaperScissor TestRockPaperScissor = new RockPaperScissor();
+      //   Assert.AreEqual(false, testLeapYear.)
+      // }
+      // [TestMethod]
+      // public void WhosTheWinner_PaperVsRock_True()
+      // {
+      //   RockPaperScissor TestRockPaperScissor = new RockPaperScissor();
+      //   Assert.AreEqual(true, TestRockPaperScissor.WhosTheWinner());
+      // }
+      // [TestMethod]
+      // public void WhosTheWinner_ScissorVsPaper_True()
+      // {
+      //   RockPaperScissor TestRockPaperScissor = new RockPaperScissor();
+      //   Assert.AreEqual(true, TestRockPaperScissor.WhosTheWinner());
 
     // [TestMethod]
     // public void IsLeapYear_NumberNotDivisibleByFour_False()
